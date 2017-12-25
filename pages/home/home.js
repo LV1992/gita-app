@@ -1,36 +1,26 @@
 // pages/home/home.js
-const order = ['red', 'yellow', 'blue', 'green', 'red']
 Page({
   /**
    * 页面的初始数据
    */
   data: {
-    tapTitle: ['标题1', '标题2', '标题3'],
-    toView: 'red'
+    imgUrls: [
+'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
+'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg',
+'http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg'
+    ],
+    indicatorDots: true,//导航点
+    autoplay: true,//自动播放
+    interval: 1500,//循环毫秒
+    duration: 800, //切换动画延时间
+    listView: [{ title: '1', url: '1' }, { title: '2', url: '2' }, { title: '3', url: '3' }, { title: '1', url: '1' }, { title: '2', url: '2' }, { title: '3', url: '3' },{ title: '1', url: '1' }, { title: '2', url: '2' }, { title: '3', url: '3' }, { title: '1', url: '1' }, { title: '2', url: '2' }, { title: '3', url: '3' }]
   },
-  upper: function (e) {
-    console.log(e)
-  },
-  lower: function (e) {
-    console.log(e)
-  },
-  scroll: function (e) {
-    console.log(e)
-  },
-
+  
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    for (var i = 0; i < order.length; ++i) {
-      debugger
-      if (order[i] === this.data.toView) {
-        this.setData({
-          toView: order[i + 2]
-        })
-        break
-      }
-    }
+    
   },
 
   /**
@@ -79,6 +69,21 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    return {
+      title : '测试分享',
+      path: 'pages/logs/logs',
+      imageUrl : '',
+      success : function(){
+        // 分享成功
+        //从相册选择照片
+        // wx.chooseImage({count:9})
+      },
+      fail : function(){
+        // 分享失败
+      },
+      complete : function(){
+        // 成功失败都会回调
+      }
+    } 
   }
 })
