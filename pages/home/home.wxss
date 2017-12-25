@@ -1,0 +1,4 @@
+/* pages/home/home.wxss */
+scroll-view view{
+  width: 375rpx; height: 100px;display: inline-block
+}

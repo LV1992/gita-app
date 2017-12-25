@@ -1,0 +1,13 @@
+<!--pages/home/home.wxml-->
+<view class="container">
+  <!--水平滚动-->
+  <scroll-view scroll-x="true"
+  bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}"
+   style="white-space: nowrap; display: flex">
+    <!--  display: inline-block-->
+    <view style="background: red;"></view>
+    <view style="background: green;"></view>
+    <view style="background: blue;"></view>
+    <view style="background: yellow;"></view>
+  </scroll-view>
+</view>
