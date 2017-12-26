@@ -1,26 +1,26 @@
-/**index.wxss**/
-.userinfo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+/* pages/home/home.wxss */
+.home{
+  padding: 0
+}
+swiper{
+  height: 250px
+}
+.slide-image{
+   width:414px; height:232px;
+}
+.scroll-view-item{
+  height:50px;
+  border-bottom: 1px solid silver;
+}
+.scorl-view{
+  padding: 0 20px;
 }
 
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
+/** 修改默认的navigator点击态 **/
+.navigator-hover {
+    color:blue;
 }
-
-.userinfo-nickname {
-  color: #aaa;
-}
-
-.to-home{
-padding-top:38px;
-color: #000
-}
-
-.usermotto {
-  margin-top: 200px;
+/** 自定义其他点击态样式类 **/
+.other-navigator-hover {
+    color:red;
 }

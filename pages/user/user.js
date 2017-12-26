@@ -1,40 +1,57 @@
-// pages/home/home.js
+// pages/user/user.js
 Page({
   /**
    * 页面的初始数据
    */
   data: {
-    imgUrls: [
-'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
-'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg',
-'http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg'
-    ],
-    indicatorDots: true,//导航点
-    autoplay: true,//自动播放
-    interval: 1500,//循环毫秒
-    duration: 800, //切换动画延时间
-    listView: [{ title: '1', url: '1' }, { title: '2', url: '2' }, { title: '3', url: '3' }, { title: '1', url: '1' }, { title: '2', url: '2' }, { title: '3', url: '3' },{ title: '1', url: '1' }, { title: '2', url: '2' }, { title: '3', url: '3' }, { title: '1', url: '1' }, { title: '2', url: '2' }, { title: '3', url: '3' }]
+    motto: '欢迎',
+    userInfo: {},
+    canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
-  
+  //点击头像事件处理函数
+  bindViewTap: function () {
+    wx.navigateTo({
+      url: '../logs/logs'
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    this.data.userInfo = wx.getStorageSync('userInfo1')
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    self = this;
+    //监听
+    var t = setInterval(function () {
+      if (self.data.userInfo) {
+        clearInterval(t);
+      } else {
+        // 本地没有数据继续调用登录
+        wx.getUserInfo({
+          success: res => {
+            self.setData({
+              userInfo: res.userInfo,
+              hasUserInfo: true
+            })
+            //将用户信息存储到本地
+            var userInfo = wx.getStorageSync('userInfo') || res.userInfo
+            wx.setStorageSync('userInfo', userInfo)
+          }
+        })
+      }
+    }, 100);
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    
   },
 
   /**
