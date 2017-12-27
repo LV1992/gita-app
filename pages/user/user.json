@@ -1,15 +1,3 @@
 {
-  "navigationBarTitleText": "所有课程",
-  "tabBar": {
-    "list": [
-      {
-        "pagePath": "pages/index/index",
-        "text": "首页"
-      },
-      {
-        "pagePath": "pages/home/home",
-        "text": "日志"
-      }
-    ]
-  }
+  "navigationBarTitleText": "用户信息"
 }

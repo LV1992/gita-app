@@ -20,6 +20,12 @@
         "selectedIconPath": "images/home-o_selected.png"
       },
       {
+        "pagePath": "pages/news/news",
+        "text": "学员风采",
+        "iconPath": "images/group_normal.png",
+        "selectedIconPath": "images/group_selected.png"
+      },
+      {
         "pagePath": "pages/user/user",
         "text": "用户",
         "iconPath": "images/user_normal.png",
